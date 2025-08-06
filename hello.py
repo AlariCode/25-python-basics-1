@@ -1,13 +1,10 @@
-# Правильные названия
-num = 5
-my_num = 1
-_my_num = 1
-myNum = 1
-MYNUM = 1
-num1 = 1
-print(num)
+user_age = 18
+is_admin = True
+username = "Anton"
 
-# Неправильные названия
-# 2num = 2
-# my-num = 4
-# my num = 3
+# a = 1
+# b = 4
+position_x, position_y = 1, 4
+
+print(user_age)
+print(username)
