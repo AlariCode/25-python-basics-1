@@ -1,14 +1,18 @@
-user_age = 18
-salary = 100.5 + 50
-is_admin = True
-username = "Anton"
+x = int(1)
+y = int(1.9)
+z = int("2")
 
-# a = 1
-# b = 4
-user_age = "18"
-position_x, position_y = 1, 4
-type_of_user_age = type(user_age)
-print(type_of_user_age)
-print(type(salary))
-print(type(is_admin))
-print(type(username))
+x = float(1)
+y = float(1.9)
+z = float("2.3")
+a = float("2")
+
+x = str(1)
+y = str(1.9)
+z = str("2.3")
+
+z = bool(3)
+
+user_data = "Anton " + str(18)
+
+print(user_data)
