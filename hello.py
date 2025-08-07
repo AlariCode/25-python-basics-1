@@ -13,6 +13,7 @@ z = str("2.3")
 
 z = bool(3)
 
-user_data = "Anton " + str(18)
+user_data = "Anton " + x
 
 print(user_data)
+print(a)
