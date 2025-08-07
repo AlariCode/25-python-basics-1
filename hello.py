@@ -13,6 +13,10 @@ z = str("2.3")
 
 z = bool(3)
 
+TIME_IN_MS = 1000
+TIME_IN_MS = 1
+PI = 3.14
+
 user_data = "Anton " + x
 
 print(user_data)
