@@ -1,23 +1,12 @@
-x = int(1)
-y = int(1.9)
-z = int("2")
+sum = 5 + 7
+minus = 10 - 3
+mult = 10 * 4
+div = 10 / 2
 
-x = float(1)
-y = float(1.9)
-z = float("2.3")
-a = float("2")
+mod = 5 % 2
+flor = 7 // 2
 
-x = str(1)
-y = str(1.9)
-z = str("2.3")
+exp = 2 ** 5
+root = 9 ** 0.5
 
-z = bool(3)
-
-TIME_IN_MS = 1000
-TIME_IN_MS = 1
-PI = 3.14
-
-user_data = "Anton " + x
-
-print(user_data)
-print(a)
+print(sum, minus, minus, div, mod, flor,exp, root)
