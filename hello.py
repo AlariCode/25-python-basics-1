@@ -1,18 +1,9 @@
 a = 10
-# a = a + 5
-a += 5
-# a = a - 5
-a -= 5
-# a = a * 5
-a *= 5
-# a = a / 5
-a /= 5
-# a = a % 5
-a %= 5
-# a = a // 5
-a //= 5
+is_less = a < 9
 
-print(a)
-# x = 3
-#print(x)
-print(x := 3)
+print(a == 9)
+print(a != 9)
+print(a > 9)
+print(is_less)
+print(a >= 9)
+print(a <= 9)
