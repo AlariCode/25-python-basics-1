@@ -1,9 +1,6 @@
-a = 10
-is_less = a < 9
+x = -1
 
-print(a == 9)
-print(a != 9)
-print(a > 9)
-print(is_less)
-print(a >= 9)
-print(a <= 9)
+print(x > 0 and x < 10)
+print(x < 0 or x >= 10)
+print(not(x > 0 and x < 10))
+print(not(x > 0) and x < 10)
