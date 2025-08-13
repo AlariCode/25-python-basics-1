@@ -1,11 +1,27 @@
 # Максимум среди 3-х чисел с плавающей точкой
-a = float(input("Введите первое число: "))
-b = float(input("Введите второе число: "))
-c = float(input("Введите третье число: "))
+role = input("Введите роль: ")
+a = 10
+# if role == 'admin':
+#     print("Админ")
+# elif role == 'manager':
+#     print("Менеджер")
+# elif role == 'seo':
+#     print("SEO специалист")
+# else:
+#     print("Уборщица")
 
-if a >= b and a >= c:
-    print(a)
-elif b >=a and b >= c:
-    print(b)
-else:
-    print(c)
+match role:
+    case "admin" | "ADMIN" if a > 0:
+        print("Админ") 
+    case "manager":
+        print("Менеджер") 
+    case "seo":
+        print("SEO специалист") 
+    case _:
+        print("Уборщица")
+
+match a:
+    case a if a > 0:
+        print(">0")
+    case _:
+        print("<=0")
