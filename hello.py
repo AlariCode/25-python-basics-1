@@ -1,17 +1,11 @@
 age = input("Введите возраст: ")
 
-if int(age) < 18:
-    print("Вам меньше 18")
-else:
-    if int(age) < 50:
-        print("Вам от 18 до 50 лет")
-    else:
-        print("Вам больше 50 лет")
+# is_legal_age = False
 
+# if int(age) > 18:
+#     is_legal_age = True
 
-if int(age) < 18:
-    print("Вам меньше 18")
-elif int(age) < 50:
-    print("Вам от 18 до 50 лет")
-else:
-    print("Вам больше 50 лет")
+is_legal_age = True if int(age) >= 18 else False
+# a if condition else b
+
+print(is_legal_age)
