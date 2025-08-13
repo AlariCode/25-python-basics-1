@@ -1,11 +1,6 @@
-x = -1
+# Вводит возраст, говорит что проходит если больше 18, но меньше 50
+# True - Принимаем
+# False - Не принимаем
 
-print(not(x > 0) and x < 10 - 3 * 4)
-# not(x > 0) and x < 10 - 12
-# not(x > 0) and x < -2
-# not(-1 > 0) and -1 < -2
-# not(False) and False
-# True and False
-# False
-print(not(x > 0) and x < (10 - 3) * 4)
-print(True and (True or False))
+age = input("Введите возраст: ")
+print(int(age) > 18 and int(age) < 50)
