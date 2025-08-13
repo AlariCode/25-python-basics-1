@@ -1,11 +1,11 @@
-age = input("Введите возраст: ")
+# Максимум среди 3-х чисел с плавающей точкой
+a = float(input("Введите первое число: "))
+b = float(input("Введите второе число: "))
+c = float(input("Введите третье число: "))
 
-# is_legal_age = False
-
-# if int(age) > 18:
-#     is_legal_age = True
-
-is_legal_age = True if int(age) >= 18 else False
-# a if condition else b
-
-print(is_legal_age)
+if a >= b and a >= c:
+    print(a)
+elif b >=a and b >= c:
+    print(b)
+else:
+    print(c)
