@@ -12,11 +12,11 @@ a = 10
 
 match role:
     case "admin" | "ADMIN" if a > 0:
-        print("Админ") 
+        print("Админ")
     case "manager":
-        print("Менеджер") 
+        print("Менеджер")
     case "seo":
-        print("SEO специалист") 
+        print("SEO специалист")
     case _:
         print("Уборщица")
 
