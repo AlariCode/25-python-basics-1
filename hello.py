@@ -1,6 +1,9 @@
-sum = 10 + 5
-print(sum)
-sum = (10).__add__(5)
-print(sum)
-s = "anton".upper()
-print(s)
+a = 10
+print(a)
+print(id(a))
+b = a
+a = 7
+print(b)
+print(id(b))
+print(a)
+print(id(a))
