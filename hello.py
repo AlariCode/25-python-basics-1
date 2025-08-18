@@ -1,9 +1,7 @@
-a = 10
+a = [10, 0]
+b = a
+a[0] = 3
 print(a)
 print(id(a))
-b = a
-a = 7
 print(b)
 print(id(b))
-print(a)
-print(id(a))
