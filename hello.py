@@ -1,7 +1,8 @@
-l = [[1, 2], [2, 3]]
-c = l.copy()
-print(c is l)
-l[0][0] = 10
-print(c)
-print(l)
-print(l[0] is c[0])
+name, age = ("Anton", 18)
+# name, age = ["Anton", 18]
+print(name)
+print(age)
+a, b = (1, 2)
+b, a = a, b
+x, y = (10 + 4*5, "as")
+print(a, b)
