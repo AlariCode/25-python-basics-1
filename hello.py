@@ -1,6 +1,4 @@
-# Нужно просуммировать края и всё что в середине
-# [10, 2, 3, 5] -> (15, 5)
-# [1, 2] -> (3, 0)
-l = [1, 2, 3, 4, 5, 6, 7, 8]
-first, *rest, last = l
-print(first + last, sum(rest))
+print(ord("A"))
+print(ord("a"))
+print(ord("П"))
+print(chr(128640))
