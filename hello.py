@@ -1,18 +1,30 @@
-password = "hello, PurpleSchool!O "
-print(password.count("o"))
-print(password.endswith("h"))
-print(password.startswith("h"))
-print(password.find("o"))
-print(password.find("o", 10))
-print(password.find("[]"))
-print(password.index("o"))
-print(password.rfind("o"))
-print(password.isnumeric())
-print("123".isnumeric())
+# Проверка email
+# a@a.ru - True
+# d@.ru - False
+# a@a.r - False
+# d@com - False
+# d@@com - False
+# dcom - False
+# @s.com - False
+# a@.com - False
+email = input("Введите email для проверки: ")
 
-t = password.split("o")
-print(t)
+if email.count("@") != 1:
+    print("Нет")
+    exit()
 
-role = ["Admin", "User"]
-all_roles = " ".join(role)
-print(all_roles)
+local, domain = email.split("@")
+
+if not local:
+    print("Нет")
+    exit()
+if "." not in domain:
+    print("Нет")
+    exit()
+if len(domain.split(".")[-1]) < 2:
+    print("Нет")
+    exit()
+if len(domain.split(".")[0]) == 0:
+    print("Нет")
+    exit()
+print("Да")
