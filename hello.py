@@ -1,3 +1,6 @@
-l = [1, 2, 3, 4, 5]
-first, second, *rest, pre_last, last = l
-print(rest)
+# Нужно просуммировать края и всё что в середине
+# [10, 2, 3, 5] -> (15, 5)
+# [1, 2] -> (3, 0)
+l = [1, 2, 3, 4, 5, 6, 7, 8]
+first, *rest, last = l
+print(first + last, sum(rest))
