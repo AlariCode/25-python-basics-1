@@ -1,13 +1,18 @@
-password = "hello, PurpleSchool! "
-up = password.upper()
-print(up)
-print(password.capitalize())
-print(password.lower())
-print(password.strip())
-print(password.replace("o", "a"))
-print(password.split("o"))
+password = "hello, PurpleSchool!O "
+print(password.count("o"))
+print(password.endswith("h"))
+print(password.startswith("h"))
+print(password.find("o"))
+print(password.find("o", 10))
+print(password.find("[]"))
+print(password.index("o"))
+print(password.rfind("o"))
+print(password.isnumeric())
+print("123".isnumeric())
 
-multiline = """Line 1
-Line 2
-Line 3"""
-print(multiline.splitlines())
+t = password.split("o")
+print(t)
+
+role = ["Admin", "User"]
+all_roles = " ".join(role)
+print(all_roles)
