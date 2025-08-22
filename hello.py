@@ -1,30 +1,7 @@
-# Проверка email
-# a@a.ru - True
-# d@.ru - False
-# a@a.r - False
-# d@com - False
-# d@@com - False
-# dcom - False
-# @s.com - False
-# a@.com - False
-email = input("Введите email для проверки: ")
-
-if email.count("@") != 1:
-    print("Нет")
-    exit()
-
-local, domain = email.split("@")
-
-if not local:
-    print("Нет")
-    exit()
-if "." not in domain:
-    print("Нет")
-    exit()
-if len(domain.split(".")[-1]) < 2:
-    print("Нет")
-    exit()
-if len(domain.split(".")[0]) == 0:
-    print("Нет")
-    exit()
-print("Да")
+name, email, age = "Anton", "a@a.ru", 18
+print("Привет " + name + " с почтой " + email + " и " + str(age) + " лет")
+print("Привет {} с почтой {} и {} лет".format(name, email, age))
+print("Привет {n} с почтой {e} и {a} лет".format(e=email, a=age, n=name))
+print(f"Привет {name} с почтой {email} и {age} лет")
+print(f"Привет {name} с почтой {email} и {age + 10} лет")
+print(f"Привет {name} с почтой {email} и {age:.1f} лет")
