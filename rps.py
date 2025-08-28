@@ -14,7 +14,7 @@ comp_score = 0
 
 for r in range(1, rount_count + 1):
     print(f"\nРаунд {r}:")
-    user_select = ""
+    user_select = None
     while user_select not in CHOICES:
         user_select = input("Выбери (камень/ножницы/бумага): ")
         if user_select not in CHOICES:

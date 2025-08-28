@@ -1,6 +1,11 @@
-# Таблица умножения от 1 до 10
+x = None
+print(x)
+print(type(x))
 
-for i in range(1, 11):
-    for j in range(1, 11):
-        print(f"{i*j:4}", end="")
-    print()
+print(x is None)
+print(x == None)  # не самый лучший путь
+
+print(x == 0)
+print(x == False)
+print(x == "")
+print(x == [])
