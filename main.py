@@ -1,14 +1,15 @@
-def print_hello(user_name: str):
-    print(f"Привет {user_name}")
+# def my_func():
+#     x = 10
+#     print(x)
 
 
-print_hello("Антон")
-print_hello("Вася")
+# my_func()
+# print(x)
 
 
-def multiply(a: int, b: int) -> int:
-    return a * b
+def show():
+    print(x)
 
 
-res = multiply(4, 5)
-print(res)
+x = 20
+show()
