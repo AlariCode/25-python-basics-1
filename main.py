@@ -2,6 +2,13 @@
 # "+" "-" "*" "/"
 
 def calculate(a: float, b: float, operation: str):
+    """
+    Делает математическую операцию над 2-мя числами
+
+    :param a: Первое число
+    :param b: Первое число
+    :return: Число или строка ошибки
+    """
     match operation:
         case "+":
             return a + b
