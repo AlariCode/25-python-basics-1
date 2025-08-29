@@ -1,7 +1,9 @@
 # Написать функцию calculate, которая принимает 2 числа и операцию
 # "+" "-" "*" "/"
+from typing import Literal
 
-def calculate(a: float, b: float, operation: str):
+
+def calculate(a: float, b: float, operation: Literal["+", "-", "*", "/"]):
     """
     Делает математическую операцию над 2-мя числами
 
@@ -23,4 +25,4 @@ def calculate(a: float, b: float, operation: str):
 
 
 print(calculate(10, 5, "+"))
-print(calculate(10, 0, "/"))
+# print(calculate(10, 0, "1"))
