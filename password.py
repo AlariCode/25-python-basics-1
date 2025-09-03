@@ -1,9 +1,7 @@
 import random
 import string
 
-passwords = {}
-# ключ: строка (домен), значение: строка (пароль)
-# { "purpleschool.ru": "123456" }
+passwords: dict[str, str] = {}
 
 
 def get_password() -> str:
@@ -14,7 +12,10 @@ def get_password() -> str:
 
 
 def show_passwords():
-    print(passwords)
+    print("Key".ljust(20), " | ", "Value")
+    print("-"*40)
+    for key, value in passwords.items():
+        print(key.ljust(20), " | ", value)
 
 
 def add_password():
