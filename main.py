@@ -1,13 +1,14 @@
 user = {"age": 37, "name": 1}
-print(user["name"])
-user["age"] = 20
-print(user)
+user["city"] = "Moscow"
 
-# print(user["city"])
-print(user.get("city", "Moscow"))
-value = user.pop("age")
-print(value)
-print(user)
+for key in user:
+    print(key)
 
-exist = "name" in user
-print(exist)
+for key in user.keys():
+    print(key)
+
+for key, value in user.items():
+    print(f"{key}: {value}")
+
+for value in user.values():
+    print(value)
