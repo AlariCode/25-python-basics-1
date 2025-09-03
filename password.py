@@ -1,6 +1,47 @@
 import random
 import string
 
+passwords = {}
+# ключ: строка (домен), значение: строка (пароль)
+# { "purpleschool.ru": "123456" }
+
+
+def get_password() -> str:
+    password = input("Введите пароль (пустой для генерации): ")
+    if password == "":
+        password = generate_password()
+    return password
+
+
+def show_passwords():
+    print(passwords)
+
+
+def add_password():
+    domain = input("Введите домен: ")
+    password = get_password()
+    passwords[domain] = password
+
+
+def delete_password():
+    domain = input("Введите домен: ")
+    if domain not in passwords:
+        print("Такого пароля нет")
+        return
+    passwords.pop(domain)
+    print("Пароль удалён")
+
+
+def update_password():
+    domain = input("Введите домен: ")
+    password = get_password()
+
+    if domain not in passwords:
+        print("Такого пароля нет")
+        return
+    passwords[domain] = password
+    print("Пароль обнолён")
+
 
 def generate_password(length: int = 8, use_symbols: bool = True):
     if length < 3:
@@ -25,16 +66,16 @@ def show_menu():
     print("3. Удалить пароль")
     print("4. Обновить пароль")
     print("5. Выход")
-    user_slect = int(input("Ваш выбор (1,2,3,4,5): "))
+    user_slect = input("Ваш выбор (1,2,3,4,5): ")
     match user_slect:
-        case 1:
-            print("Показать пароли")
-        case 2:
-            print("Добавить пароль")
-        case 3:
-            print("Удалить пароль")
-        case 4:
-            print("Обновить пароль")
+        case "1":
+            show_passwords()
+        case "2":
+            add_password()
+        case "3":
+            delete_password()
+        case "4":
+            update_password()
         case _:
             exit()
 
