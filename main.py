@@ -1,24 +1,16 @@
-s = {1, 2, 3}
+a = {1, 2, 3}
+b = {3, 4, 5}
 
-s.add(4)
-print(s)
+print(a | b)
+print(a.union(b))
 
-s.update([5, 6])
-print(s)
+print(a & b)
+print(a.intersection(b))
 
-s.remove(2)
-print(s)
+a = {1, 2, 3, 4}
+b = {3, 4, 5}
+print(a - b)
+print(b - a)
 
-s.discard(3)
-s.discard(7)
-print(s)
-
-removed_item = s.pop()
-print(removed_item)
-print(s)
-
-print(4 in s)
-print(7 in s)
-
-for el in s:
-    print(el)
+print(a ^ b)
+print(a.symmetric_difference(b))
