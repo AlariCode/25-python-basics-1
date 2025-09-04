@@ -1,14 +1,14 @@
-user = {"age": 37, "name": 1}
-user["city"] = "Moscow"
+s = set()
+print(s)
 
-for key in user:
-    print(key)
+s = {1, 2, 3, 4, 5, 5}  # set (множество)
+l = [1, 2, 3, 4, 5, 5]  # список
+t = (1, 2, 3, 4, 5, 5)  # кортеж
+print(s)
+print(l)
+print(t)
+s2 = set(l)
+s3 = set(t)
 
-for key in user.keys():
-    print(key)
-
-for key, value in user.items():
-    print(f"{key}: {value}")
-
-for value in user.values():
-    print(value)
+print(s2)
+print(s3)
