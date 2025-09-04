@@ -1,21 +1,18 @@
-# Посчитать для каждого дня - всего визитой, уникальных визитов
-# Найти ID, кто посетили оба дня
-# Найти ID, кто посетили только первый день
-# Найти ID, кто посетили только второй день
-# Найти ID, кто были только 1 раз
+a = {1, 2}
+b = {1, 2, 3}
+c = {3, 1, 2}
 
-visitors_day1 = [101, 102, 103, 101, 104, 102, 105, 101]
-visitors_day2 = [101, 108, 100, 101, 105, 107]
+print(a.issubset(b))
+print(b.issubset(a))
 
-u_visitors_day1 = set(visitors_day1)
-u_visitors_day2 = set(visitors_day2)
+print(a.issuperset(b))
+print(b.issuperset(a))
 
-print(
-    f"Входов день 1: {len(visitors_day1)}, уникальных {len(u_visitors_day1)}")
-print(
-    f"Входов день 2: {len(visitors_day2)}, уникальных {len(u_visitors_day2)}")
+print(c == b)
+print(c != b)
 
-print("Были оба дня: ", u_visitors_day1 & u_visitors_day2)
-print("Были в первый день: ", u_visitors_day1 - u_visitors_day2)
-print("Были во второй день: ", u_visitors_day2 - u_visitors_day1)
-print("Были в один из дней: ", u_visitors_day2 ^ u_visitors_day1)
+a.clear()
+print(a)
+
+d = b.copy()
+print(d == b)
