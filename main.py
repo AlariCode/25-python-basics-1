@@ -1,14 +1,24 @@
-s = set()
+s = {1, 2, 3}
+
+s.add(4)
 print(s)
 
-s = {1, 2, 3, 4, 5, 5}  # set (множество)
-l = [1, 2, 3, 4, 5, 5]  # список
-t = (1, 2, 3, 4, 5, 5)  # кортеж
+s.update([5, 6])
 print(s)
-print(l)
-print(t)
-s2 = set(l)
-s3 = set(t)
 
-print(s2)
-print(s3)
+s.remove(2)
+print(s)
+
+s.discard(3)
+s.discard(7)
+print(s)
+
+removed_item = s.pop()
+print(removed_item)
+print(s)
+
+print(4 in s)
+print(7 in s)
+
+for el in s:
+    print(el)
