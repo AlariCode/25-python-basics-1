@@ -1,16 +1,21 @@
-a = {1, 2, 3}
-b = {3, 4, 5}
+# Посчитать для каждого дня - всего визитой, уникальных визитов
+# Найти ID, кто посетили оба дня
+# Найти ID, кто посетили только первый день
+# Найти ID, кто посетили только второй день
+# Найти ID, кто были только 1 раз
 
-print(a | b)
-print(a.union(b))
+visitors_day1 = [101, 102, 103, 101, 104, 102, 105, 101]
+visitors_day2 = [101, 108, 100, 101, 105, 107]
 
-print(a & b)
-print(a.intersection(b))
+u_visitors_day1 = set(visitors_day1)
+u_visitors_day2 = set(visitors_day2)
 
-a = {1, 2, 3, 4}
-b = {3, 4, 5}
-print(a - b)
-print(b - a)
+print(
+    f"Входов день 1: {len(visitors_day1)}, уникальных {len(u_visitors_day1)}")
+print(
+    f"Входов день 2: {len(visitors_day2)}, уникальных {len(u_visitors_day2)}")
 
-print(a ^ b)
-print(a.symmetric_difference(b))
+print("Были оба дня: ", u_visitors_day1 & u_visitors_day2)
+print("Были в первый день: ", u_visitors_day1 - u_visitors_day2)
+print("Были во второй день: ", u_visitors_day2 - u_visitors_day1)
+print("Были в один из дней: ", u_visitors_day2 ^ u_visitors_day1)
