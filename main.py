@@ -1,10 +1,19 @@
-# 1.	Проверьте, что у пользователя есть все обязательные документы
-# 2.	Равны ли наборы документов?
-# 3.	Выведите список лишних документов, которые пользователь добавил.
+def apply(func, value):
+    return func(value)
 
-required_docs = frozenset({"паспорт", "ИНН", "СНИЛС"})
-user_docs = {"паспорт", "ИНН", "СНИЛС", "диплом"}
 
-print(f"Обязательные: {required_docs.issubset(user_docs)}")
-print(f"Равны ли: {required_docs == frozenset(user_docs)}")
-print(f"Лишние: {user_docs - required_docs}")
+def square(x: int):
+    return x * x
+
+
+print(apply(square, 5))
+
+
+def make_adder(n: int):
+    def adder(x: int):
+        return x + n
+    return adder
+
+
+add5 = make_adder(5)
+print(add5(10))
