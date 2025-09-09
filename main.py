@@ -1,15 +1,23 @@
-# Нужно найти те заказы, для которых сумма > 100 и статус paid
-orders = [
-    {"id": 1, "user": "Anton", "amount": 150, "status": "paid"},
-    {"id": 2, "user": "Kate", "amount": 50, "status": "canceled"},
-    {"id": 3, "user": "Oleg", "amount": 200, "status": "paid"},
-    {"id": 4, "user": "Ivan", "amount": 0, "status": "draft"},
-    {"id": 5, "user": "Maria", "amount": 120, "status": "paid"}
-]
+from functools import reduce
 
-filtered_orders = list(filter(
-    lambda o: o["status"] == "paid" and o["amount"] > 100,
-    orders
-))
 
-print(filtered_orders)
+nums = [1, 2, 3, 4, 5]
+print(sum(nums))
+
+res = 0
+
+for n in nums:
+    res += n
+print(res)
+
+
+def sum_custom(acc: int, next_el: int):
+    return acc + next_el
+
+
+total = reduce(sum_custom, nums, 10)
+print(total)
+
+words = ["Привет!", "Как", "дела?"]
+sentence = reduce(lambda a, b: a + " " + b, words)
+print(sentence)
