@@ -1,34 +1,18 @@
-# Список покупок
-# 	1.	Общую сумму всех заказов.
-#   2.	Количество всех проданных товаров.
+nums = [5, 2, 9, 1, 7, 10]
 
-from functools import reduce
+print(sorted(nums))
+print(sorted(nums, reverse=True))
 
+words = ["banana", "apple", "pear", "ab"]
 
-orders = [
-    {"id": 1, "user": "Anton", "items": [
-        {"name": "Laptop", "price": 1000},
-        {"name": "Mouse", "price": 50}
-    ]},
-    {"id": 2, "user": "Kate", "items": [
-        {"name": "Phone", "price": 700}
-    ]},
-    {"id": 3, "user": "Oleg", "items": [
-        {"name": "Monitor", "price": 300},
-        {"name": "Keyboard", "price": 100}
-    ]}
+print(sorted(words))
+print(sorted(words, reverse=True))
+
+users = [
+    {"name": "Anton", "age": 18},
+    {"name": "Maria", "age": 20},
+    {"name": "Anna", "age": 20},
+    {"name": "Vasia", "age": 50}
 ]
-# {"total_price": 1000, "total_items": 10}
 
-
-def aggregate(acc: dict, order: dict) -> dict:
-    order_sum = sum(item["price"] for item in order["items"])
-    order_count = len(order["items"])
-    return {
-        "total_price": acc["total_price"] + order_sum,
-        "total_items": acc["total_items"] + order_count
-    }
-
-
-result = reduce(aggregate, orders, {"total_price": 0,  "total_items": 0})
-print(result)
+print(sorted(users, key=lambda u: (-u["age"], u["name"])))
