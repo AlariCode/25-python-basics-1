@@ -1,29 +1,25 @@
-def multiplier(factor: float):
-    def inner(x: float):
-        return x * factor
-    return inner
+
+def main():
+    print("Task менеджер. help - для справки")
+    while True:
+        raw = input("> ").strip()
+        parts = raw.split()
+        cmd, args = parts[0], parts[1:]
+        match cmd:
+            case "help":
+                pass
+            case "add":
+                pass
+            case "remove":
+                pass
+            case "edit":
+                pass
+            case "tags":
+                pass
+            case "exit":
+                break
+            case _:
+                print("Неизвестная команда")
 
 
-double = multiplier(2)
-triple = multiplier(3)
-
-print(double(10))
-print(triple(10))
-
-
-def make_counter():
-    count = 0
-
-    def counter():
-        nonlocal count
-        count += 1
-        return count
-    return counter
-
-
-c1 = make_counter()
-c2 = make_counter()
-print(c1())
-print(c1())
-print(c1())
-print(c2())
+main()
