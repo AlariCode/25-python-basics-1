@@ -1,12 +1,19 @@
+def divide(a: float, b: float):
+    if b == 0:
+        raise ZeroDivisionError({"error": 1})
+    return a / b
+
+
+def calculate():
+    try:
+        divide(10, 0)
+    except ZeroDivisionError as e:
+        print("Деление на 0")
+        print(e)
+        raise
+
+
 try:
-    x = int(input("Введите число: "))
-    print(10/0)
-# except ValueError:
-#     print("Ошибка input!")
-# except ZeroDivisionError:
-#     print("Ошибка деления на 0!")
-except Exception as e:
-    print("Ошибка:", e)
-finally:
-    print("Финал")
-print("Продолжение...")
+    calculate()
+except ZeroDivisionError:
+    print("Поймали выше")
