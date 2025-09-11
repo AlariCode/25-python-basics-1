@@ -1,19 +1,14 @@
-def divide(a: float, b: float):
-    if b == 0:
-        raise ZeroDivisionError({"error": 1})
-    return a / b
+class InvalidAgeError(Exception):
+    pass
 
 
-def calculate():
-    try:
-        divide(10, 0)
-    except ZeroDivisionError as e:
-        print("Деление на 0")
-        print(e)
-        raise
+def set_age(age: int):
+    if age < 0:
+        raise InvalidAgeError("Возраст должен быть больше 0")
+    return age
 
 
 try:
-    calculate()
-except ZeroDivisionError:
-    print("Поймали выше")
+    set_age(-1)
+except InvalidAgeError as e:
+    print(e)
