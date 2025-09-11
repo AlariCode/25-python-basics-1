@@ -1,14 +1,12 @@
-class InvalidAgeError(Exception):
+class BankError(Exception):
     pass
 
 
-def set_age(age: int):
-    if age < 0:
-        raise InvalidAgeError("Возраст должен быть больше 0")
-    return age
+class ZeroFundError(BankError):
+    pass
 
 
 try:
-    set_age(-1)
-except InvalidAgeError as e:
-    print(e)
+    1 / 0
+except (ValueError, ZeroDivisionError):
+    print("Общая ошибка")
