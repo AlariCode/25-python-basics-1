@@ -1,6 +1,5 @@
-import math
-# import math as m
-# from math import sqrt, pi
-# from math import *
+# import calc
+# import calc as c
+from calc import add
 
-print(math.sqrt(16))
+print(add(1, 5))
