@@ -1,3 +1,5 @@
+from commands.help import help_command
+
 
 def main():
     print("Task менеджер. help - для справки")
@@ -8,7 +10,7 @@ def main():
             cmd, args = parts[0], parts[1:]
             match cmd:
                 case "help":
-                    pass
+                    help_command()
                 case "add":
                     pass
                 case "remove":
