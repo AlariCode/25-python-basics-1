@@ -1,5 +1,6 @@
 
 from typing import TypedDict, Optional
+from datetime import date
 
 PRIORITIES = {"low", "med", "high"}
 
@@ -10,9 +11,10 @@ class Task(TypedDict):
     priority: str
     tags: Optional[list[str]]
     status: str
+    due: Optional[date]
 
 
-def make_task(id_: int, title: str, priority: str = "med", tags: Optional[list[str]] = None) -> Task:
+def make_task(id_: int, title: str, due: Optional[date] = None, priority: str = "med", tags: Optional[list[str]] = None) -> Task:
     if priority not in PRIORITIES:
         raise ValueError("Неверный приоритет. Можно только low | med | high")
     task: Task = {
@@ -20,6 +22,7 @@ def make_task(id_: int, title: str, priority: str = "med", tags: Optional[list[s
         "title": title.strip(),
         "priority": priority,
         "tags": tags,
-        "status": "new"
+        "status": "new",
+        "due": due
     }
     return task
