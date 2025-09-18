@@ -1,5 +1,6 @@
 from commands.help import help_command
-import datetime
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 
 def main():
@@ -33,16 +34,13 @@ def main():
 
 if __name__ == "__main__":
     # main()
-    d1 = datetime.datetime(2025, 9, 17)
-    d2 = datetime.datetime(2025, 12, 31)
-    print(d1 < d2)
-    print(d1 == d2)
-    print(d1 > d2)
+    now_utc = datetime.now(ZoneInfo("UTC"))
+    now = datetime.now()
+    print(now)
+    print(now_utc)
+    now_ny = datetime.now(ZoneInfo("America/New_York"))
+    print(now_ny)
 
-    now = datetime.datetime.now()
-    deadline = datetime.datetime(2025, 10, 12, 18, 0, 0)
-
-    if now < deadline:
-        print("Ещё успеваю")
-    else:
-        print("Опаздал")
+    meeting = datetime(2025, 9, 17, 12, 0, tzinfo=ZoneInfo("Europe/Moscow"))
+    meeting_ny = meeting.astimezone(ZoneInfo("America/New_York"))
+    print(meeting_ny)
