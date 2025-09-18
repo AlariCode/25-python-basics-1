@@ -33,12 +33,16 @@ def main():
 
 if __name__ == "__main__":
     # main()
-    new_year = datetime.date(2026, 1, 1)
-    today = datetime.date.today()
-    diff = new_year - today
-    print(diff.days)
-    next_week = today + datetime.timedelta(weeks=1)
-    next_week2 = today + datetime.timedelta(days=7)
-    print(next_week2)
-    last_month = today - datetime.timedelta(days=30)
-    print(last_month)
+    d1 = datetime.datetime(2025, 9, 17)
+    d2 = datetime.datetime(2025, 12, 31)
+    print(d1 < d2)
+    print(d1 == d2)
+    print(d1 > d2)
+
+    now = datetime.datetime.now()
+    deadline = datetime.datetime(2025, 10, 12, 18, 0, 0)
+
+    if now < deadline:
+        print("Ещё успеваю")
+    else:
+        print("Опаздал")
