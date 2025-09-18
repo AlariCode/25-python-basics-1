@@ -33,16 +33,12 @@ def main():
 
 if __name__ == "__main__":
     # main()
-    now = datetime.datetime.now()
-    # %Y - 2025 год
-    # %y - 25 год
-    # %m - 08 месяцы
-    # %d - 19 дни
-    # %H - 20 часы
-    # %M - 10 минуты
-    # %S - 02 секунды
-    print(now.strftime("%Y-%m-%d %H:%M:%S"))
-
-    s = "2025-09-17 18:44"
-    dt = datetime.datetime.strptime(s, "%Y-%m-%d %H:%M")
-    print(dt)
+    new_year = datetime.date(2026, 1, 1)
+    today = datetime.date.today()
+    diff = new_year - today
+    print(diff.days)
+    next_week = today + datetime.timedelta(weeks=1)
+    next_week2 = today + datetime.timedelta(days=7)
+    print(next_week2)
+    last_month = today - datetime.timedelta(days=30)
+    print(last_month)
