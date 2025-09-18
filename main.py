@@ -1,5 +1,6 @@
 from commands.help import help_command
 from commands.tasks import make_task
+from helpers.args import parse_add
 
 
 def main():
@@ -13,7 +14,8 @@ def main():
                 case "help":
                     help_command()
                 case "add":
-                    pass
+                    title, prio, due, tags = parse_add(args)
+                    print(make_task(1, title, due, prio, tags))
                 case "remove":
                     pass
                 case "edit":
@@ -32,5 +34,5 @@ def main():
 
 
 if __name__ == "__main__":
-    print(make_task(1, "Записать лекцию"))
+
     main()
