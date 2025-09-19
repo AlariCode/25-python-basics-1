@@ -1,10 +1,12 @@
 from shlex import split
 from commands.help import help_command
-from commands.tasks import make_task
-from helpers.args import parse_add
+from commands.add import add_command
+from tasks.tasks import Task
 
 
 def main():
+    tasks: list[Task] = []
+    next_id = 1
     print("Task менеджер. help - для справки")
     while True:
         try:
@@ -15,8 +17,9 @@ def main():
                 case "help":
                     help_command()
                 case "add":
-                    title, prio, due, tags = parse_add(args)
-                    print(make_task(1, title, due, prio, tags))
+                    next_id = add_command(tasks, args, next_id)
+                case "list":
+                    pass
                 case "remove":
                     pass
                 case "edit":
