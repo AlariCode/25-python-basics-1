@@ -16,10 +16,10 @@ def parse_add(args: list[str]):
             due_str = arg.split("=", 1)[1]
             try:
                 due = parse_date(due_str)
-            except ValueError:
+            except ValueError as e:
                 raise ValueError(
                     f"Неверный формат даты {due_str}. Ожидаем YYYY-MM-DD"
-                )
+                ) from e
         elif arg.startswith("tags="):
             tags_str = arg.split("=", 1)[1]
             tags = tags_str.split(",")
