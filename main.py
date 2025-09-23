@@ -40,14 +40,7 @@ def main():
 if __name__ == "__main__":
 
     # main()
-    # r - чтение
-    # w - запись
-    # a - добавить
-    # x - создание нового файла
-    # b - бинарный файл
-    # t - текстовый
-    # + - открытие для чтения / записи
-    f = open("notes.txt", "a", encoding="utf-8")
-    f.write("Первая строка\n")
-    f.write("Вторая строка\n")
-    f.close()
+    with open("notes.txt", "w", encoding="utf-8") as f:
+        f.write("Привет!\n")
+        f.write("Я записал")
+    print("Завершено")
