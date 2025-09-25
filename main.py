@@ -1,3 +1,4 @@
+import json
 from shlex import split
 from commands.help import help_command
 from commands.add import add_command
@@ -38,9 +39,8 @@ def main():
 
 
 if __name__ == "__main__":
-
     # main()
-    with open("notes.txt", "w", encoding="utf-8") as f:
-        f.write("Привет!\n")
-        f.write("Я записал")
-    print("Завершено")
+    # res = json.dumps({"a": True, "b": [1, 2, 3]})
+    with open("tasks.json", "w", encoding="utf-8") as f:
+        json.dump({"id": 1, "title": "Задача"},
+                  f, ensure_ascii=False, indent=2)
