@@ -1,6 +1,7 @@
 from shlex import split
 from commands.help import help_command
 from commands.add import add_command
+from commands.list import list_command
 from tasks.tasks import Task
 from storage.file import save_tasks, load_tasks
 
@@ -20,7 +21,7 @@ def main():
                 case "add":
                     next_id = add_command(tasks, args, next_id)
                 case "list":
-                    pass
+                    list_command(tasks, args)
                 case "remove":
                     pass
                 case "edit":
