@@ -1,4 +1,12 @@
 {
-  "id": 1,
-  "title": "Задача"
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Сделать кофе",
+      "priority": "med",
+      "status": "new",
+      "tags": null,
+      "due": "2025-11-10"
+    }
+  ]
 }

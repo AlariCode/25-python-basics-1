@@ -1,13 +1,14 @@
-import json
 from shlex import split
 from commands.help import help_command
 from commands.add import add_command
 from tasks.tasks import Task
+from storage.file import save_tasks
 
 
 def main():
     tasks: list[Task] = []
     next_id = 1
+    file_path = "tasks.json"
     print("Task менеджер. help - для справки")
     while True:
         try:
@@ -28,19 +29,18 @@ def main():
                 case "tags":
                     pass
                 case "exit":
+                    save_tasks(file_path, tasks)
                     break
                 case _:
                     print("Неизвестная команда")
         except KeyboardInterrupt:
+            save_tasks(file_path, tasks)
             print("\nЗавершение приложения...")
             break
         except Exception as e:
+            save_tasks(file_path, tasks)
             print(f"[ERROR]: {e}")
 
 
 if __name__ == "__main__":
-    # main()
-    # res = json.dumps({"a": True, "b": [1, 2, 3]})
-    with open("tasks.json", "w", encoding="utf-8") as f:
-        json.dump({"id": 1, "title": "Задача"},
-                  f, ensure_ascii=False, indent=2)
+    main()
