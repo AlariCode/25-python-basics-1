@@ -1,3 +1,4 @@
+import json
 from shlex import split
 from commands.help import help_command
 from commands.add import add_command
@@ -43,4 +44,12 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    # with open("notes.txt", "r", encoding="utf-8") as f:
+    # text = f.read()
+    # print(text)
+    # for line in f:
+    # print(">", line.rstrip())
+    with open("tasks.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+        print(data)
