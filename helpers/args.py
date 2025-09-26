@@ -36,3 +36,30 @@ def parse_add(args: list[str]):
 
 def parse_date(date_str: str) -> date:
     return datetime.strptime(date_str, "%Y-%m-%d").date()
+
+
+def parse_edit(args: list[str]):
+    if len(args) < 2:
+        raise ValueError("Неверно передана команда")
+    task_id = 0
+    try:
+        task_id = int(args[0])
+    except ValueError as e:
+        raise ValueError("Неверно передан id задачи") from e
+
+    changes = {}
+
+    for arg in args[1:]:
+        if arg.startswith("title="):
+            changes["title"] = arg.split("=", 1)[1]
+        if arg.startswith("prio="):
+            changes["prio"] = arg.split("=", 1)[1]
+        elif arg.startswith("due="):
+            due_str = arg.split("=", 1)[1]
+            try:
+                changes["due"] = parse_date(due_str)
+            except ValueError as e:
+                raise ValueError(
+                    f"Неверный формат даты {due_str}. Ожидаем YYYY-MM-DD"
+                ) from e
+    return (task_id, changes)

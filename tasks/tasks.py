@@ -33,8 +33,6 @@ def remove_task(tasks: list[Task], task_id) -> bool:
     tasks[:] = list(filter(lambda t: t["id"] != task_id, tasks))
     return len(tasks) < before_len
 
-# update_task(task, title="123", prio="low")
-
 
 def update_task(task: Task, **changes):
     if "title" in changes:

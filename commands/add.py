@@ -1,4 +1,4 @@
-"""Модуль для добавления команды"""
+"""Модуль для добавления задачи"""
 from tasks.tasks import Task, make_task
 from helpers.args import parse_add
 from helpers.table import stringify_table

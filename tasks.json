@@ -26,8 +26,8 @@
     },
     {
       "id": 4,
-      "title": "Новая",
-      "priority": "high",
+      "title": "Привет!",
+      "priority": "low",
       "status": "new",
       "tags": [],
       "due": null
