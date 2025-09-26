@@ -48,3 +48,9 @@ def update_task(task: Task, **changes):
         if prio not in PRIORITIES:
             raise ValueError("Неверный приоритет. Только: low | med | high")
         task["priority"] = prio
+
+    if "due" in changes:
+        due = changes["due"]
+        if due is not None and not isinstance(due, date):
+            raise TypeError("Поле due должно быть date или None")
+        task["due"] = due
