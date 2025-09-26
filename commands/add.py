@@ -7,7 +7,7 @@ from helpers.table import stringify_table
 def add_command(tasks: list[Task], args: list[str], next_id: int) -> int:
     try:
         title, prio, due, tags = parse_add(args)
-        task = make_task(1, title, due, prio, tags)
+        task = make_task(next_id, title, due, prio, tags)
         tasks.append(task)
         print("Добавлена задача")
         print(stringify_table([task]))

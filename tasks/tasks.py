@@ -26,3 +26,9 @@ def make_task(id_: int, title: str, due: Optional[date] = None, priority: str = 
         "due": due
     }
     return task
+
+
+def remove_task(tasks: list[Task], task_id) -> bool:
+    before_len = len(tasks)
+    tasks[:] = list(filter(lambda t: t["id"] != task_id, tasks))
+    return len(tasks) < before_len

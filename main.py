@@ -2,6 +2,7 @@ from shlex import split
 from commands.help import help_command
 from commands.add import add_command
 from commands.list import list_command
+from commands.remove import remove_command
 from tasks.tasks import Task
 from storage.file import save_tasks, load_tasks
 
@@ -9,6 +10,7 @@ from storage.file import save_tasks, load_tasks
 def main():
     file_path = "tasks.json"
     tasks, next_id = load_tasks(file_path)
+    print(next_id)
     print("Task менеджер. help - для справки")
     while True:
         try:
@@ -23,7 +25,7 @@ def main():
                 case "list":
                     list_command(tasks, args)
                 case "remove":
-                    pass
+                    remove_command(tasks, args)
                 case "edit":
                     pass
                 case "tags":
